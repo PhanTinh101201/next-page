@@ -62,6 +62,7 @@ const Login = () => {
                 type="text"
                 className={styles["input-field"]}
                 placeholder="Username"
+                autoComplete="off"
                 {...register("userName")}
               />
             </div>

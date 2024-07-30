@@ -3,9 +3,17 @@ import React from "react";
 import Link from "next/link";
 import styles from "../../../styles/button.module.css";
 import { useRouter } from "next/navigation";
+import Cookies from "js-cookie";
 
 const Header = () => {
   const router = useRouter();
+  const isLogin = localStorage.getItem("userId") === "admin";
+
+  const handelLogout = () => {
+    router.push("/");
+    Cookies.remove("loginSusses");
+    localStorage.removeItem("userId");
+  };
   return (
     <div className="h-10 flex justify-between items-center">
       <div className="gap-3 flex">
@@ -13,16 +21,17 @@ const Header = () => {
           Home
         </Link>
         <Link className="font-bold" href="/product">
-          Product
+          Products
         </Link>
       </div>
       <button
         onClick={() => {
-          router.push("/login");
+          if (!isLogin) router.push("/login");
+          if (isLogin) handelLogout();
         }}
         className={styles["header__button"]}
       >
-       Login
+        {isLogin ? "Logout" : "Login"}
       </button>
     </div>
   );
