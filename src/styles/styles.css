@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 .loader {
   animation: rotate 1s infinite;
   height: 50px;
