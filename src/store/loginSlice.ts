@@ -8,6 +8,8 @@ interface LoginState {
 
 const isLogin = getStorage("userId") == `"admin"`;
 
+console.log("isLoginssss", isLogin)
+
 const initialState: LoginState = {
   value: isLogin ? "Logout" : "Login",
 };
