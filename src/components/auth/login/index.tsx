@@ -32,7 +32,7 @@ const Login = () => {
       dispatch(loginSusses());
       toast.success("Đăng Nhập Thành Công");
       Cookies.set("loginSusses", "true");
-      localStorage.setItem("userId", data.userName);
+      localStorage?.setItem("userId", data.userName);
     } else {
       toast.warning("Đăng Nhập Thất Bại");
     }

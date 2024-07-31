@@ -10,14 +10,14 @@ import { logout } from "@/store/loginSlice";
 
 const Header = () => {
   const router = useRouter();
-  const isLogin = localStorage.getItem("userId") === "admin";
+  const isLogin = localStorage?.getItem("userId") === "admin";
   const auth = useSelector((state: RootState) => state.login.value);
   const dispatch: AppDispatch = useDispatch();
 
   const handelLogout = () => {
     router.push("/");
     Cookies.remove("loginSusses");
-    localStorage.removeItem("userId");
+    localStorage?.removeItem("userId");
     dispatch(logout());
   };
   return (
