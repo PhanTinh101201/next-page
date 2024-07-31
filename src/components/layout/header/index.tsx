@@ -4,25 +4,24 @@ import Link from "next/link";
 import styles from "../../../styles/button.module.css";
 import { useRouter } from "next/navigation";
 import Cookies from "js-cookie";
-import { useSelector, useDispatch } from "react-redux";
-import { AppDispatch, RootState } from "../../../store";
-import { logout } from "@/store/loginSlice";
+import { useSelector } from "react-redux";
+import { RootState } from "../../../store";
 import { getStorage, removeStorage } from "@/utils/storage";
 
 const Header = () => {
   const router = useRouter();
-  const isLogin = getStorage("userId") === "admin";
+  const isLogin = getStorage("userId") == `"admin"`;
   const auth = useSelector((state: RootState) => state.login.value);
-  const dispatch: AppDispatch = useDispatch();
+
+  console.log('isLogin', isLogin, getStorage("userId"))
 
   const handelLogout = () => {
-    router.push("/");
     Cookies.remove("loginSusses");
     removeStorage("userId");
-    dispatch(logout());
+    window.location.reload()
   };
   return (
-    <div className="h-10 flex justify-between items-center">
+    <div className="h-[70px] flex justify-between items-center bg-[#212121] rounded-[5px]">
       <div className="gap-3 flex">
         <Link className="font-bold" href="/home">
           Home
@@ -36,9 +35,9 @@ const Header = () => {
           if (!isLogin) router.push("/login");
           if (isLogin) handelLogout();
         }}
-        className={styles["header__button"]}
+        className={`${styles["header__button"]} m-4 mb-5`}
       >
-        {auth}
+        <div className="mt-1">{auth}</div>
       </button>
     </div>
   );

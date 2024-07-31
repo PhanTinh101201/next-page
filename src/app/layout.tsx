@@ -1,11 +1,11 @@
 "use client"
 import { Inter } from "next/font/google";
 import { ToastContainer } from "react-toastify";
-import "../styles/styles.css";
 import "react-toastify/dist/ReactToastify.css";
-import Header from "@/components/layout/header";
 import { Provider } from "react-redux";
+import Header from "@/components/layout/header";
 import { store } from "../store";
+import "../styles/styles.css";
 
 const inter = Inter({ subsets: ["latin"] });
 

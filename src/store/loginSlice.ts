@@ -1,13 +1,15 @@
 "use client";
+import { getStorage } from "@/utils/storage";
 import { createSlice } from "@reduxjs/toolkit";
 
 interface LoginState {
   value: string;
 }
 
+const isLogin = getStorage("userId") == `"admin"`;
 
 const initialState: LoginState = {
-  value: "Login",
+  value: isLogin ? "Logout" : "Login",
 };
 
 export const loginSlice = createSlice({
@@ -17,12 +19,9 @@ export const loginSlice = createSlice({
     loginSusses: (state) => {
       state.value = "Logout";
     },
-    logout: (state) => {
-      state.value = "Login";
-    },
   },
 });
 
-export const { loginSusses, logout } = loginSlice.actions;
+export const { loginSusses } = loginSlice.actions;
 
 export default loginSlice.reducer;
