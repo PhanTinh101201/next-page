@@ -11,7 +11,7 @@ import { logout } from "@/store/loginSlice";
 const Header = () => {
   const router = useRouter();
   const isLogin = localStorage.getItem("userId") === "admin";
-  const count = useSelector((state: RootState) => state.login.value);
+  const auth = useSelector((state: RootState) => state.login.value);
   const dispatch: AppDispatch = useDispatch();
 
   const handelLogout = () => {
@@ -37,7 +37,7 @@ const Header = () => {
         }}
         className={styles["header__button"]}
       >
-        {count}
+        {auth}
       </button>
     </div>
   );

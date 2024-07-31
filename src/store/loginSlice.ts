@@ -5,14 +5,9 @@ interface LoginState {
   value: string;
 }
 
-function checkIsLogin() {
-  return localStorage.getItem("userId") === "admin";
-}
-
-const isLogin = checkIsLogin();
 
 const initialState: LoginState = {
-  value: isLogin ? "Logout" : "Login",
+  value: "Login",
 };
 
 export const loginSlice = createSlice({
