@@ -5,7 +5,11 @@ interface LoginState {
   value: string;
 }
 
-const isLogin = localStorage.getItem("userId") === "admin";
+function checkIsLogin() {
+  return localStorage.getItem("userId") === "admin";
+}
+
+const isLogin = checkIsLogin();
 
 const initialState: LoginState = {
   value: isLogin ? "Logout" : "Login",
