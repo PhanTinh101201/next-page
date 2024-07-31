@@ -4,15 +4,21 @@ import Link from "next/link";
 import styles from "../../../styles/button.module.css";
 import { useRouter } from "next/navigation";
 import Cookies from "js-cookie";
+import { useSelector, useDispatch } from "react-redux";
+import { AppDispatch, RootState } from "../../../store";
+import { logout } from "@/store/loginSlice";
 
 const Header = () => {
   const router = useRouter();
   const isLogin = localStorage.getItem("userId") === "admin";
+  const count = useSelector((state: RootState) => state.login.value);
+  const dispatch: AppDispatch = useDispatch();
 
   const handelLogout = () => {
     router.push("/");
     Cookies.remove("loginSusses");
     localStorage.removeItem("userId");
+    dispatch(logout());
   };
   return (
     <div className="h-10 flex justify-between items-center">
@@ -31,7 +37,7 @@ const Header = () => {
         }}
         className={styles["header__button"]}
       >
-        {isLogin ? "Logout" : "Login"}
+        {count}
       </button>
     </div>
   );

@@ -7,6 +7,9 @@ import { LoginService } from "./service";
 import Cookies from "js-cookie";
 import styles from "../../../styles/login.module.css";
 import LoadingLogin from "@/components/loading/loadingLogin";
+import { useDispatch } from "react-redux";
+import { loginSusses } from "../../../store/loginSlice";
+import { AppDispatch } from "../../../store";
 
 interface FormValues {
   userName: string;
@@ -17,6 +20,7 @@ const Login = () => {
   const router = useRouter();
   const { register, handleSubmit } = useForm<FormValues>();
   const [loading, setLoading] = useState<boolean>(false);
+  const dispatch: AppDispatch = useDispatch();
 
   const onSubmit: SubmitHandler<FormValues> = async (data) => {
     setLoading(true);
@@ -25,6 +29,7 @@ const Login = () => {
 
     if (response?.data?.passWord === data.passWord) {
       router.push("/admin");
+      dispatch(loginSusses());
       toast.success("Đăng Nhập Thành Công");
       Cookies.set("loginSusses", "true");
       localStorage.setItem("userId", data.userName);
