@@ -10,6 +10,7 @@ import LoadingLogin from "@/components/loading/loadingLogin";
 import { useDispatch } from "react-redux";
 import { loginSusses } from "../../../store/loginSlice";
 import { AppDispatch } from "../../../store";
+import { setStorage } from "@/utils/storage";
 
 interface FormValues {
   userName: string;
@@ -32,7 +33,7 @@ const Login = () => {
       dispatch(loginSusses());
       toast.success("Đăng Nhập Thành Công");
       Cookies.set("loginSusses", "true");
-      localStorage?.setItem("userId", data.userName);
+      setStorage("userId", data.userName);
     } else {
       toast.warning("Đăng Nhập Thất Bại");
     }

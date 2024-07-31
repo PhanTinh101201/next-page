@@ -7,17 +7,18 @@ import Cookies from "js-cookie";
 import { useSelector, useDispatch } from "react-redux";
 import { AppDispatch, RootState } from "../../../store";
 import { logout } from "@/store/loginSlice";
+import { getStorage, removeStorage } from "@/utils/storage";
 
 const Header = () => {
   const router = useRouter();
-  const isLogin = localStorage?.getItem("userId") === "admin";
+  const isLogin = getStorage("userId") === "admin";
   const auth = useSelector((state: RootState) => state.login.value);
   const dispatch: AppDispatch = useDispatch();
 
   const handelLogout = () => {
     router.push("/");
     Cookies.remove("loginSusses");
-    localStorage?.removeItem("userId");
+    removeStorage("userId");
     dispatch(logout());
   };
   return (
