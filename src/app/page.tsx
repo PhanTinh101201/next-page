@@ -1,9 +1,21 @@
+"use client";
 import React from "react";
 import styles from "../styles/button.module.css";
+import Slider from "react-slick";
 
 const Landing = () => {
+  const settings = {
+    dots: false,
+    infinite: true,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: true,
+    speed: 3000,
+    autoplaySpeed: 2000,
+    cssEase: "linear",
+  };
   return (
-    <div>
+    <div className="overflow-hidden">
       <div className="bg-[#f5f5f7] w-[100%] h-[600px] flex justify-center items-center flex-col">
         <img
           className="w-[500px]"
@@ -214,6 +226,64 @@ const Landing = () => {
             alt="error"
           />
         </div>
+      </div>
+      <div className="slider-container mt-3">
+        <Slider {...settings}>
+          <div>
+            <img
+              className="w-[97%] h-[255px]"
+              width={500}
+              height={255}
+              src="https://png.pngtree.com/thumb_back/fw800/background/20230527/pngtree-music-note-background-image_2670279.jpg"
+              alt="error"
+            />
+          </div>
+          <div>
+            <img
+              className="w-[97%] h-[255px]"
+              width={500}
+              height={255}
+              src="https://tuhoctiengtrung.vn/wp-content/uploads/2019/04/hinh-anh-ten-cac-loai-nhac-bang-tieng-trung-1.jpg"
+              alt="error"
+            />
+          </div>
+          <div>
+            <img
+              className="w-[97%] h-[255px]"
+              width={500}
+              height={255}
+              src="https://1clip.bacgiangtv.vn/upload/audio/large/am_nhac_va_doi_song_nhung_ban_nhac_chill_19281115042023.png"
+              alt="error"
+            />
+          </div>
+          <div>
+            <img
+              className="w-[97%] h-[255px]"
+              width={500}
+              height={255}
+              src="https://solution.com.vn/upload_images/images/2021/12/logo-am-nhac/logo-am-nhac-1.jpg"
+              alt="error"
+            />
+          </div>
+          <div>
+            <img
+              className="w-[97%] h-[255px]"
+              width={500}
+              height={255}
+              src="https://cdn.tgdd.vn/Files/2022/07/29/1451210/tiktok-music_1280x720-800-resize.png"
+              alt="error"
+            />
+          </div>
+          <div>
+            <img
+              className="w-[97%] h-[255px]"
+              width={500}
+              height={255}
+              src="https://www.shutterstock.com/image-vector/template-design-music-festival-celebration-600nw-2477580121.jpg"
+              alt="error"
+            />
+          </div>
+        </Slider>
       </div>
     </div>
   );

@@ -12,8 +12,6 @@ const Header = () => {
   const isLogin = getStorage("userId") == `"admin"`;
   const auth = useSelector((state: RootState) => state.login.value);
 
-  console.log("isLogin", isLogin, getStorage("userId"), auth);
-
   const handelLogout = () => {
     Cookies.remove("loginSusses");
     removeStorage("userId");
