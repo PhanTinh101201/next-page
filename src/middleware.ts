@@ -6,10 +6,11 @@ export default function middleware(req: any) {
   const listPrivateRoute = ["/admin"];
 
   if (!verify && url.includes(listPrivateRoute)) {
-    return NextResponse.redirect("http://localhost:9999/");
+    return NextResponse.redirect("https://meoconcobau.vercel.app/");
   }
 
-  if (verify && url === "http://localhost:9999/") {
-    return NextResponse.redirect("http://localhost:9999/admin");
-  }
+  
+  // if (verify && url === "http://localhost:9999/") {
+  //   return NextResponse.redirect("http://localhost:9999/admin");
+  // }
 }

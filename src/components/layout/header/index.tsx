@@ -20,34 +20,53 @@ const Header = () => {
     window.location.reload();
   };
   return (
-    <div className="h-[44px] flex items-center justify-center rounded-[5px]">
-      <div className="gap-7 flex">
-        <Link className="font-bold" href="/home">
-          <img src="http://surl.li/hzpzfr" className="w-7" />
-        </Link>
-        <Link href="/product">Cửa Hàng</Link>
-        <Link href="/home">Mac</Link>
-        <Link href="/product">iPhone</Link>
-        <Link href="/product">Watch</Link>
-        <Link href="/product">Phụ KIện</Link>
-        <Link href="/product">Hỗ Trợ</Link>
-        <Link href="/product">
+    <div className="h-[44px] flex items-center justify-center bg-[#FAFAFC] sticky top-0 z-10">
+      <div className="gap-[50px] flex">
+        <Link className="font-bold" href="/">
           <svg
-            className="w-6 h-6 text-gray-800 dark:text-white"
-            aria-hidden="true"
+            height="44"
+            viewBox="0 0 14 44"
+            width="14"
             xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            fill="none"
-            viewBox="0 0 24 24"
           >
-            <path
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-width="2"
-              d="m21 21-3.5-3.5M17 10a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z"
-            />
+            <path d="m13.0729 17.6825a3.61 3.61 0 0 0 -1.7248 3.0365 3.5132 3.5132 0 0 0 2.1379 3.2223 8.394 8.394 0 0 1 -1.0948 2.2618c-.6816.9812-1.3943 1.9623-2.4787 1.9623s-1.3633-.63-2.613-.63c-1.2187 0-1.6525.6507-2.644.6507s-1.6834-.9089-2.4787-2.0243a9.7842 9.7842 0 0 1 -1.6628-5.2776c0-3.0984 2.014-4.7405 3.9969-4.7405 1.0535 0 1.9314.6919 2.5924.6919.63 0 1.6112-.7333 2.8092-.7333a3.7579 3.7579 0 0 1 3.1604 1.5802zm-3.7284-2.8918a3.5615 3.5615 0 0 0 .8469-2.22 1.5353 1.5353 0 0 0 -.031-.32 3.5686 3.5686 0 0 0 -2.3445 1.2084 3.4629 3.4629 0 0 0 -.8779 2.1585 1.419 1.419 0 0 0 .031.2892 1.19 1.19 0 0 0 .2169.0207 3.0935 3.0935 0 0 0 2.1586-1.1368z"></path>
           </svg>
+        </Link>
+        <Link
+          href="/product"
+          className="text-[12px] text-[#000c]  flex justify-center items-center leading-loose"
+        >
+          Store
+        </Link>
+        <Link
+          href="/home"
+          className="text-[12px] text-[#000c] flex justify-center items-center leading-loose"
+        >
+          Mac
+        </Link>
+        <Link
+          href="/product"
+          className="text-[12px] text-[#000c] flex justify-center items-center leading-loose"
+        >
+          iPhone
+        </Link>
+        <Link
+          href="/product"
+          className="text-[12px] text-[#000c] flex justify-center items-center leading-loose"
+        >
+          Watch
+        </Link>
+        <Link
+          href="/product"
+          className="text-[12px] text-[#000c] flex justify-center items-center leading-loose"
+        >
+          Vision
+        </Link>
+        <Link
+          href="/product"
+          className="text-[12px] text-[#000c] flex justify-center items-center leading-loose"
+        >
+          Support
         </Link>
         <button
           onClick={() => {
@@ -60,8 +79,8 @@ const Header = () => {
               className="w-6 h-6 text-gray-800 dark:text-white"
               aria-hidden="true"
               xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
+              width="18"
+              height="18"
               fill="currentColor"
               viewBox="0 0 24 24"
             >
@@ -73,8 +92,8 @@ const Header = () => {
             </svg>
           ) : (
             <svg
-              width="25"
-              height="25"
+              width="18"
+              height="18"
               viewBox="0 0 24 24"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"

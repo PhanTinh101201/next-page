@@ -40,7 +40,7 @@ const Login = () => {
   };
 
   return (
-    <div className="flex justify-center items-center h-[calc(100vh-2.5rem-130px)] bg-[#212121] rounded-[44px] m-[60px]">
+    <div className="flex justify-center items-center h-[calc(100vh-2.5rem-130px)]">
         <div className={`${styles.card}`}>
           <div className={styles.card2}>
             <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>

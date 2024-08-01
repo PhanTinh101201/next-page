@@ -17,7 +17,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className="px-11">
           <Provider store={store}>
             <Header />
             {children}
@@ -33,7 +32,6 @@ export default function RootLayout({
               pauseOnHover
             />
           </Provider>
-        </div>
       </body>
     </html>
   );
