@@ -1,7 +1,12 @@
+import Product from "@/components/product";
 import React from "react";
 
-const Product = () => {
-  return <>Product</>;
+const ProductPage = () => {
+  return (
+    <div>
+      <Product />
+    </div>
+  );
 };
 
-export default Product;
+export default ProductPage;
